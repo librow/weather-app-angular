@@ -2,11 +2,15 @@
 $background-start-rgb: 17 93 163;
 $background-end-rgb: 78 207 237;
 
+html, body {
+  font-family: 'Open Sans';
+}
+
 body {
-    background: linear-gradient(
-        to right top,
-        transparent,
-        rgb( $background-end-rgb )
-      )
-      rgb($background-start-rgb);
+  background: linear-gradient(
+      to right top,
+      transparent,
+      rgb( $background-end-rgb )
+    )
+    rgb($background-start-rgb);
 }

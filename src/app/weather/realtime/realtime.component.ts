@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { ApiService, RealtimeWeatherData } from '../../shared/api.service';
+import weatherCodeToDescription from '../../shared/helpers/weatherCodeToDescr.component';
 
 @Component({
   selector: 'app-realtime',
@@ -12,8 +13,9 @@ import { ApiService, RealtimeWeatherData } from '../../shared/api.service';
 export class RealtimeComponent {
   realtime: RealtimeWeatherData | undefined;
   temperature: number | undefined;
-  description: number | undefined;
+  description: string | undefined;
   windSpeed: number | undefined;
+  math = Math;
 
   constructor(private apiService: ApiService) {}
 
@@ -22,12 +24,9 @@ export class RealtimeComponent {
       // .subscribe(data => this.realtime = { ...data });
       .subscribe(data => {
         this.temperature = data.data.values.temperature;
-        this.description = data.data.values.weatherCode;
+        this.description = weatherCodeToDescription(data.data.values.weatherCode);
         this.windSpeed = data.data.values.windSpeed;
-
       })
-    console.log(this.temperature);
-    // this.description = weatherCodeToDescription(realtime.data.values.weatherCode);
   }
 
 }

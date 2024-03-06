@@ -1,15 +1,14 @@
 <div class="styles.rtContent">
     <div class="styles.rtTemp">
-       {{ temperature + '°'}}
+       {{ temperature ? (math.trunc(temperature) + '°') : 'loading' }}
     </div>
     <!-- <RealtimeIcon size={45} /> -->
     <div class="styles.rtDescription">
         <div>
-            description
-            {{realtime}}
+            {{ description }}
         </div>
         <div>
-            Math.trunc(realtime.data.values.windSpeed) + ' mph'
+            {{ windSpeed ? (math.trunc(windSpeed) + ' mph') : 'loading' }}
         </div>
     </div>
 </div>

@@ -3,30 +3,28 @@
       <div class="location">
         <!-- <Location /> -->
         <div class="locationTitle">
-          full_location
+          {{ location }}
         </div>
       </div>
       <div class="currentDate">
-        full_date
+        {{ date }}
       </div>
     </div>
     <div class="center">
       <div class="rtContainer" style="height: 368px;">
         <div class="rtBanner">
-          <!-- <RealtimeWeather styles={styles} realtime={realtime} /> -->
           <app-realtime></app-realtime>
           <div>
             <!-- <MySwitch /> -->
           </div>
         </div>
         <div class="cloudSmall">
-          <!-- <Image src="/cloudSmall.png" alt="cloud small" width={146} height={84} /> -->
+          <img src="../../assets/cloudSmall.png" alt="cloud small" width={146} height={84} />
         </div>
         <div class="cloudLarge">
-          <!-- <Image src="/cloudLarge.png" alt="cloud large" width={208} height={114} /> -->
+          <img src="../../assets/cloudLarge.png" alt="cloud large" width={208} height={114} />
         </div>
       </div>
-      <!-- <FiveDayForecast styles={styles} forecast={forecast} /> -->
       <app-forecast></app-forecast>
     </div>
 </main>
