@@ -1,7 +1,16 @@
-<div class="forecastContainer">
+<div 
+    class="forecastContainer"
+>
     <!-- {forecast.timelines.daily.map((day: DayForecast, i: number) => {
         return (
             <ForecastItem key={i} styles={styles} day={day} />
         )
     })} -->
+    <app-forecast-item 
+        *ngFor="let day of forecast?.timelines?.daily; let i = index"
+        [day]="day"
+        [temperature]="day.values.temperatureAvg"
+        [weatherCode]="day.values.weatherCodeMax"
+        [index]="i"
+    />
 </div>

@@ -14,10 +14,10 @@ import { ApiService } from './shared/api.service';
     // AppComponent,
     // WeatherComponent,
     // RealtimeComponent,
-    // ForecastComponent,
   ],
   imports: [
     HttpClientModule,
+    ForecastComponent,
   ],
   providers: [
     ApiService
